@@ -4,7 +4,7 @@ Snake is a simple console game where the player manipulates a growing line that 
 Functional requirements for the project:
 - a change in the position of the snake on the field (movement) occurs after a certain period of time;
 - to change the direction of movement of the snake, you can use the keyboard keys;
-- if the snake's head rests against the wall, then the movement of the snake goes along the ring, i.e. it appears from the other (opposite) edge of the field;
+- if the snake's head collides with the field boundary, then the movement of the snake goes along the ring, i.e. it appears from the other (opposite) edge of the field;
 - food for the snake appears on the field in a random place;
 - if the snake manages to “eat” the food, then the length of the snake increases;
 - the game ends if the snake "bites" itself or if the user himself decides to interrupt the execution.
