@@ -2,6 +2,7 @@
 #include "const.h"
 #include "food.h"
 
+// Initializing food coordinates
 void init_food(struct FOOD& myFood)
 {
 	myFood.food_x = 0;

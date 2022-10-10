@@ -3,22 +3,12 @@
 #include "field.h"
 #include <iostream>
 
+// An auxiliary pointer to a dynamic array of size columns*rows
 char* pfield;
+// Pointer to elements of a dynamic two-dimensional array with columns as columns and rows as rows
 char** ppfield;
 
-/*void init_field(struct FIELD& myField)
-{
-	for (int i = 0; i < myField.rows; i++)
-	{
-		myField.ppfield[i][0] = border_symbol;
-		for (int j = 1; j < myField.columns -1 ; j++)
-		{
-			myField.ppfield[i][j] = field_symbol;
-		}
-		myField.ppfield[i][myField.columns-1] = border_symbol;
-	}
-}*/
-
+// Filling a field with white space characters
 void clear_field(struct FIELD& myField)
 {
 	for (int i = 0; i < myField.rows; i++)
@@ -32,7 +22,7 @@ void clear_field(struct FIELD& myField)
 	}
 }
 
-
+// Displaying a snake on the screen
 void print_field(struct FIELD& myField)
 {
 	for (int i = 0; i < myField.columns; i++)
@@ -56,6 +46,7 @@ void print_field(struct FIELD& myField)
 	}
 }
 
+// Capturing memory for a dynamic array of a field and filling it with empty space characters
 void init_field(struct FIELD& myField)
 {
 	std::cout << "Snake\nInput number of rows:";
@@ -73,6 +64,7 @@ void init_field(struct FIELD& myField)
 	clear_field(myField);
 }
 
+// Freeing memory from a dynamic array
 void destroy_field(struct FIELD& myField)
 {
 	delete[] myField.pfield;

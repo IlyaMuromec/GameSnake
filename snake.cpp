@@ -2,6 +2,8 @@
 #include "const.h"
 #include "snake.h"
 
+// Capturing memory for dynamic arrays of coordinates of the snake horizontally and vertically 
+// with dimension max_size=(columns-2)*rows, setting the snake to its initial position
 void init_snake(struct SNAKE& mySnake, int max_size)
 {
 	mySnake.snake_x = new int[max_size];
@@ -16,13 +18,16 @@ void init_snake(struct SNAKE& mySnake, int max_size)
 	}
 }
 
+// Freeing memory from under dynamic arrays of snake coordinates
 void destroy_snake(struct SNAKE& mySnake)
 {
 	delete[] mySnake.snake_x;
 	delete[] mySnake.snake_y;
 }
 
-
+// Snake step.For the head of the snake, new coordinates are set, 
+// located on the next field in the direction of its movement.
+// All i - th coordinates of the tail are assigned the values of(i + 1) coordinates
 void move_snake(struct SNAKE& mySnake)
 {
 	for (int i = 1; i < mySnake.snake_size; i++)
@@ -49,6 +54,8 @@ void move_snake(struct SNAKE& mySnake)
 	}
 }
 
+// Increasing the size of the snake by one, while the head of the snake is assigned new coordinates
+// with the tail position unchanged. The new last element of the tail is copied from the penultimate
 void grow_snake(struct SNAKE& mySnake)
 {
 	mySnake.snake_size++;

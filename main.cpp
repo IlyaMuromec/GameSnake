@@ -12,7 +12,7 @@
 
 int main()
 {	
-	srand(time(0));
+	srand(time(0)); //
 	struct GAME myGame;
 	init_game(myGame);
 	generate_food(myGame.mySnake, myGame.myFood, myGame.myField);
